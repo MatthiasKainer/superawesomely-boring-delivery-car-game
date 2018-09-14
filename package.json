@@ -22,7 +22,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://MatthiasKainer.github.io/superawesomely-boring-delivery-game",
+  "homepage": "https://matthiaskainer.github.io/superawesomely-boring-delivery-game/",
   "devDependencies": {
     "redux-mock-store": "^1.5.3"
   }

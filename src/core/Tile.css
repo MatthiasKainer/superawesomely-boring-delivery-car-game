@@ -3,7 +3,7 @@
     display: inline-block;
     width: 64px;
     height: 64px;
-    background-image:url('/spritesheet.png');
+    background-image:url('./assets/spritesheet.png');
   }
   
   .tile.road.corner.up-left {

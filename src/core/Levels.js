@@ -13,9 +13,11 @@ export class Levels extends Component {
     currentLevel;
 
     componentWillMount() {
-        const nextLevel = window.location.hash ? window.location.hash.slice(1) : this.props.currentLevel;
+        const nextLevel = this.props.currentLevel;
         this.currentLevel = LevelLoader[nextLevel];
-        if (this.props.mapLoaded) { this.props.mapLoaded(this.currentLevel); }
+        if (this.props.mapLoaded) { 
+            this.props.mapLoaded(this.currentLevel); 
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -34,6 +36,7 @@ export class Levels extends Component {
         });
         
         const gameFieldWidth = this.currentLevel.dimensions[0] * TILE_SIZE;
+        const {obstacles} = this.props;
 
         return <div className="gameField" style={{width: gameFieldWidth}}>
             {rows}
@@ -41,7 +44,7 @@ export class Levels extends Component {
             <Customers positions={this.props.customers} />
             <Obstacles 
                 initialObstacles={this.currentLevel.obstacles} 
-                obstacles={this.props.obstacles}
+                obstacles={obstacles}
                 onMoveObstacle={this.props.onMoveObstacle} />
         </div>;
     }

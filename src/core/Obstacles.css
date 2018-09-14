@@ -1,26 +1,26 @@
 .sprite.obstacle.car {
-    background-image: url('/obstacle.png');
+    background-image: url('./assets/obstacle.png');
     background-position: center 0;
     background-repeat: no-repeat;
 }
 .sprite.obstacle.broken-car {
-    background-image: url('/broken-car.png');
+    background-image: url('./assets/broken-car.png');
     background-position: center 0;
     background-repeat: no-repeat;
 }
 .sprite.obstacle.driving-car {
-    background-image: url('/driving-car.png');
+    background-image: url('./assets/driving-car.png');
     background-position: 0px 0px;
 }
 .sprite.obstacle.driving-car.LEFT {
-    background-image: url('/driving-car.png');
+    background-image: url('./assets/driving-car.png');
     background-position: 0 64px;
 }
 .sprite.obstacle.driving-car.UP {
-    background-image: url('/driving-car.png');
+    background-image: url('./assets/driving-car.png');
     background-position: 64px 0px;
 }
 .sprite.obstacle.driving-car.DOWN {
-    background-image: url('/driving-car.png');
+    background-image: url('./assets/driving-car.png');
     background-position: 64px 64px;
 }

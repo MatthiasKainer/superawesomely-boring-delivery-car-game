@@ -19,14 +19,24 @@ const registerMovement = (obstacleName, obstacle, onMoveObstacle) => {
 export class Obstacles extends Component {
     keys = [];
 
-    componentWillMount() {
-        const {obstacles, initialObstacles} = this.props;
+    loadObstacles(props) {
+        const {obstacles, initialObstacles} = props;
         Object.keys(initialObstacles).forEach(obstacleName => {
+            if (this.keys.includes(`obstacle.${obstacleName}`)) return;
             const currentObstacle = obstacles ? obstacles[obstacleName] : null || initialObstacles[obstacleName];
-            if (currentObstacle.directions) {
-                this.keys.push(registerMovement(obstacleName, currentObstacle, this.props.onMoveObstacle));
+            if (currentObstacle && currentObstacle.directions) {
+                this.keys.push(registerMovement(obstacleName, currentObstacle, props.onMoveObstacle));
             }
         });
+    }
+
+    componentWillMount() {
+        this.keys.forEach(key => removeFromEventLoop(key));
+        this.loadObstacles(this.props);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.loadObstacles(nextProps);
     }
 
     componentWillUnmount() {
@@ -37,6 +47,12 @@ export class Obstacles extends Component {
         const {obstacles, initialObstacles} = this.props;
         return Object.keys(initialObstacles).map(obstacleName => {
             const currentObstacle = obstacles ? obstacles[obstacleName] : null || initialObstacles[obstacleName];
+            if (!currentObstacle) {
+                console.log(obstacles);
+                console.log(initialObstacles);
+                console.log(`Obstacle ${obstacleName} could not be loaded!`);
+                return "";
+            };
             const direction = currentObstacle.currentDirection || "";
             return <div 
                 key={`obstacle-${obstacleName}`}

@@ -17,6 +17,12 @@ export class Engine extends Component {
         this.loop.setup();
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.gameState === GameState.WIN && this.props.level && this.props.level.map.next) {
+            this.props.nextLevel(this.props.level.map.next);
+        }
+    }
+
     componentWillUnmount() {
         this.loop.stop();
     }
@@ -28,11 +34,6 @@ export class Engine extends Component {
             case GameState.PLAY:
                 return <Levels />;
             case GameState.WIN:
-                if (this.props.level && this.props.level.map.next) {
-                    this.props.nextLevel(this.props.level.map.next);
-                    return <Levels />;
-                }
-
                 return <Won />;
             case GameState.LOOSE:
                 return <Loose />;
