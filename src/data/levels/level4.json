@@ -1,5 +1,4 @@
 {
-    "next" : "level4",
     "dimensions": [
         10,
         5
@@ -77,7 +76,12 @@
         [
             3,
             0,
-            999
+            47
+        ],
+        [
+            9,
+            0,
+            50
         ],
         [
             2,
@@ -94,6 +98,9 @@
         ],
         [
             0,3,26
+        ],
+        [
+            1,4,40
         ]
     ],
     "obstacles": {
@@ -209,6 +216,30 @@
                 "LEFT",
                 "LEFT",
                 "LEFT"
+            ],
+            "speed": 500
+        },
+        "driving_car5": {
+            "type": "driving-car",
+            "position": [
+                9,
+                2
+            ],
+            "directions": [
+                "LEFT",
+                "LEFT",
+                "LEFT",
+                "LEFT",
+                "LEFT",
+                "DOWN",
+                "DOWN",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "RIGHT",
+                "UP",
+                "UP"
             ],
             "speed": 500
         }
