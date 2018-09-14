@@ -1,0 +1,19 @@
+{
+    "next" : "level1",
+    "dimensions" : [3,3],
+    "fields" : [
+        ["road corner up-left", "road horizontal", "road corner up-right"],
+        ["road vertical", "meadows blocked", "road vertical"],
+        ["road corner down-left", "road horizontal", "road corner down-right"]
+    ],
+    "player" : [2,2],
+    "customers" : [
+        [0, 0, 4]
+    ],
+    "obstacles" : {
+        "broken_car" : { 
+            "type" : "car",
+            "position" : [0, 2]
+        }
+    }
+}

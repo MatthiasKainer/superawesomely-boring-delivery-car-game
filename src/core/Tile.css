@@ -1,0 +1,66 @@
+
+.tile {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background-image:url('/spritesheet.png');
+  }
+  
+  .tile.road.corner.up-left {
+    background-position-x:  0;
+    background-position-y: 0;
+  }
+  
+  .tile.road.corner.up-right {
+    background-position-x: 448px;
+    background-position-y: 448px;
+  }
+  
+  .tile.road.corner.down-left {
+    background-position-x: 192px;
+    background-position-y: -64px;
+  }
+  
+  .tile.road.corner.down-right {
+    background-position-x: 128px;
+    background-position-y: 0px;
+  }
+  
+  .tile.road.horizontal {
+    background-position-x: 320px;
+    background-position-y: 384px;
+  }
+  
+  .tile.road.vertical {
+    background-position-x: 192px;
+    background-position-y: 0px;
+  }
+  .tile.road.crossing.vertical-left {
+    background-position-x: 256px;
+    background-position-y: -64px;
+  }
+  .tile.road.crossing.vertical-right {
+    background-position-x: 320px;
+    background-position-y: -128px;
+  }
+  .tile.road.crossing.horizontal-down {
+    background-position-x: 128px;
+    background-position-y: -64px;
+  }
+  .tile.road.crossing.horizontal-up {
+    background-position-x: -64px;
+    background-position-y: 0px;
+  }
+  .tile.road.crossing.left-right-bottom {
+    background-position-x: 64px;
+    background-position-y: 0px;
+  }
+  .tile.road.crossing.horizontal-vertical {
+    background-position-x: 256px;
+    background-position-y: -128px;
+  }
+
+  .tile.meadows {
+    background-position-x: 192px;
+    background-position-y: -192px;
+  }

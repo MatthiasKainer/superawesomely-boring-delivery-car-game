@@ -1,0 +1,30 @@
+{
+    "next" : "level3",
+    "dimensions" : [5,5],
+    "fields" : [
+        ["road corner up-left", "road horizontal", "road crossing horizontal-up", "road horizontal", "road corner up-right"],
+        ["road vertical", "road corner up-left", "road crossing horizontal-vertical", "road corner up-right", "road vertical"],
+        ["road crossing vertical-left", "road corner down-right", "road vertical", "road corner down-left", "road crossing vertical-right"],
+        ["road vertical", "road corner up-left", "road corner down-right", "meadows blocked", "road vertical"],
+        ["road corner down-left", "road crossing horizontal-down", "road horizontal", "road horizontal", "road corner down-right"]
+    ],
+    "player" : [4,4],
+    "customers" : [
+        [3, 0, 9],
+        [2, 2, 6],
+        [4, 3, 23],
+        [0, 3, 15]
+    ],
+    "obstacles" : {
+        "broken_car" : { 
+            "type" : "broken-car",
+            "position" : [0, 4]
+        },
+        "driving_car" : {
+            "type" : "driving-car",
+            "position" : [0, 0],
+            "directions" : ["RIGHT", "RIGHT", "DOWN", "LEFT", "DOWN", "LEFT", "UP", "UP"],
+            "speed" : 500
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.gameField {
+    position: relative;
+    margin: 0 auto;
+}
+
+.row {
+    height:64px;
+}
+
+.sprite {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+}
