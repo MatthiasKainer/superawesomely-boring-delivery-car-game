@@ -101,8 +101,9 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={Player} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Plan your Delivery!</h1>
+                    <h1 className="App-title">TOM<br/>Plan your Delivery!</h1>
                     <img src={Player} className="App-logo" alt="logo" />
+                    <div className="help">Use your cursor keys or swipe over the game area</div>
                 </header>
                 <Engine />
             </div>
