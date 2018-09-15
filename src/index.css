@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Chango', cursive;
+  font-size: 1.2vw;
   background: #8CB54A;
 }
 
@@ -13,13 +14,13 @@ body {
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 60px;
+  width: 4vw;
 }
 
 .App-header {
   background-color: rgb(106,106,106);
   border-bottom: 3px solid #222;
-  height: 60px;
+  height: 5vw;
   padding: 20px;
   color: #222;
   margin-bottom: 15px;
@@ -37,6 +38,7 @@ body {
 .help {
   position: absolute;
   right: 0;
+  bottom: 0;
   font-size: smaller;
 }
 
