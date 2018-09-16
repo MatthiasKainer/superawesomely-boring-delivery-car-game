@@ -62,6 +62,21 @@ describe("When a player wants to perform a move that is denied", () => {
     });
 });
 
+describe("When a player wants to perform a move outside the map", () => {
+    const map = {
+        "fields" : [
+            ["road corner up-left", "road horizontal", "road corner up-right"],
+            ["road vertical", "meadows", "road vertical"],
+            ["road corner down-left", "road horizontal", "road corner down-right"]
+        ],
+        "player" : [0,0]
+    }
+    it("should result in a failure", () => {
+        const result = moveTo({map, direction : Direction.UP});
+        expect(result.success).toBe(false);
+    });
+});
+
 describe("When a player wants to perform a move that is blocked by an obstacle", () => {
     const map = {
         "fields" : [

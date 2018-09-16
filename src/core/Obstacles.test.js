@@ -36,7 +36,7 @@ describe("When showing multiple obstacles", () => {
             }
         }} />);
     });
-    it("should render one obstacle", () => {
+    it("should render all obstacles", () => {
         expect(obstacles.find(".obstacle").length).toBe(2);
     });
 });
