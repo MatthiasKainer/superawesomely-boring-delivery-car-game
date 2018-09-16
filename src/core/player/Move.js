@@ -6,6 +6,8 @@ export const Direction = {
 }
 
 const isCollisionOnMap = (map, position) => {
+    if (!map.fields[position[1]]) return true;
+    if (!map.fields[position[1]][position[0]]) return true;
     const field = map.fields[position[1]][position[0]];
     return (field.indexOf("blocked") !== -1)
 };

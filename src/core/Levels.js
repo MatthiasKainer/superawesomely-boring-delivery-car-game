@@ -31,7 +31,7 @@ export class Levels extends Component {
         
         const rows = fields.map((row, rowIndex) => {
             return <div key={`row-${rowIndex}`} className="row">{
-                row.map((item, colIndex) => <Tile key={`item-${rowIndex}-${colIndex}`} tileset={item} />)
+                row.map((item, colIndex) => <Tile key={`item-${rowIndex}-${colIndex}`} tileset={item} position={[colIndex, rowIndex]} />)
             }</div>;
         });
         
