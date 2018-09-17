@@ -1,3 +1,5 @@
+import { collision } from "../Collision";
+
 export const Direction = {
     LEFT: 0,
     RIGHT: 1,
@@ -22,7 +24,7 @@ const isComingFromBadDirection = (map, position, direction) => {
 const isCollisionWithObstacle = (obstacles, position) => {
     if (!obstacles) return false;
     return Object.keys(obstacles).some(key => {
-        return JSON.stringify(obstacles[key].position) === JSON.stringify(position);
+        return collision(obstacles[key].position, position);
     });
 }
 

@@ -1,6 +1,7 @@
 import { GameState } from "./State";
 import { moveTo } from "./player/Move";
 import { moveObstacleTo } from "./obstacle/Move";
+import { collision } from "./Collision";
 
 const handleCustomers = (customers, player, gameState) => {
     if (!customers) { return { gameState: GameState.WIN }; }
@@ -45,8 +46,7 @@ export default (state = {}, action) => {
             if (obstacles[action.payload]) {
                 obstacles[action.payload] = moveObstacleTo(obstacles[action.payload]);
                 let gameState = state.gameState;
-                if (obstacles[action.payload].position[0] === state.player.position[0] &&
-                    obstacles[action.payload].position[1] === state.player.position[1]) {
+                if (collision(obstacles[action.payload].position, state.player.position)) {
                     gameState = GameState.LOOSE;
                 }
 
