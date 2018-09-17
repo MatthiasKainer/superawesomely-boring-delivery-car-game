@@ -63,5 +63,6 @@ const reducer = (state = {}, action) => {
 }
 
 export default (state = {}, action) => {
-    return reducer(state, action)[action.type]();
+    const current = reducer(state, action)[action.type];
+    return current ? current() : state;
 }

@@ -30,7 +30,7 @@ describe("When creating an event loop", () => {
                 })
         });
 
-        it("should allow to add an item with the same key twice", () => {
+        it("should not allow to add an item with the same key twice", () => {
             expect(() => registerToEventLoop("test-subscriber", dummySubscriber)).toThrow();
         });
 

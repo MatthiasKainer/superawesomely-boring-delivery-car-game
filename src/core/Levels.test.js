@@ -26,9 +26,11 @@ describe("When opening a specific level id", () => {
         it("should render 3 rows", () => {
             expect(levels.find(".row").length).toBe(3);
         });
+        
         it("should render 9 fields", () => {
             expect(levels.find(Tile).length).toBe(9);
         });
+
         it("should render one player", () => {
             expect(levels.find(Player).length).toBe(1);
         });
@@ -37,7 +39,7 @@ describe("When opening a specific level id", () => {
             expect(levels.find(Customers).length).toBe(1);
         });
 
-        it("should render one obstacle which is a truck", () => {
+        it("should render one obstacle", () => {
             expect(levels.find(Obstacles).length).toBe(1);
         });
     });

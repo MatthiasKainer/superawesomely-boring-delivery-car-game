@@ -35,14 +35,14 @@ describe("When a player wants to perform a valid move on a map", () => {
 describe("When a player wants to perform a move that is blocked by a field", () => {
     const map = {
         "fields" : [
-            ["road corner up-left", "road horizontal", "road corner up-right"],
+            ["road corner up-left", "road horizontal blocked", "road corner up-right"],
             ["road vertical blocked", "meadows", "road vertical"],
             ["road corner down-left", "road horizontal", "road corner down-right"]
         ],
         "player" : [0,2]
     }
     it("should result in a failure", () => {
-        const result = moveTo({map, direction : Direction.UP});
+        const result = moveTo({map, direction : Direction.LEFT});
         expect(result.success).toBe(false);
     });
 });
@@ -51,7 +51,7 @@ describe("When a player wants to perform a move that is denied", () => {
     const map = {
         "fields" : [
             ["road corner up-left", "road horizontal", "road corner up-right"],
-            ["road vertical", "meadows", "road vertical"],
+            ["road vertical-left", "road horizontal", "road vertical-right"],
             ["road corner down-left", "road horizontal", "road corner down-right"]
         ],
         "player" : [1,1]

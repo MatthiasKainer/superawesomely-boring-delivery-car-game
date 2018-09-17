@@ -5,7 +5,6 @@ import { startPlaying } from './CoreActions';
 export class Menu extends Component {
     render() {
         // for now we don't have a menu..;
-        console.log("to next state")
         this.props.startPlaying();
         return "";
     }

@@ -6,7 +6,7 @@ describe("When showing a single customer", () => {
     let customers;
 
     beforeEach(() => {
-        customers = shallow(<Customers positions={[[0,0]]} />);
+        customers = shallow(<Customers positions={[[0,0,99]]} />);
     });
     it("should render one customer", () => {
         expect(customers.find(".customer").length).toBe(1);
@@ -14,6 +14,9 @@ describe("When showing a single customer", () => {
     it("should put the customer to the right position", () => {
         expect(customers.find(".customer").props().style.top).toBe(0);
         expect(customers.find(".customer").props().style.left).toBe(0);
+    });
+    it("should show the customer's counter", () => {
+        expect(customers.find(".customer").text()).toBe("99");
     });
 });
 
@@ -24,7 +27,7 @@ describe("When showing multiple single customers", () => {
     beforeEach(() => {
         customers = shallow(<Customers positions={[[0,0], [0,0]]} />);
     });
-    it("should render one customer", () => {
+    it("should render all customer", () => {
         expect(customers.find(".customer").length).toBe(2);
     });
 });
