@@ -46,7 +46,7 @@ export default (state = {}, action) => {
             if (obstacles[action.payload]) {
                 obstacles[action.payload] = moveObstacleTo(obstacles[action.payload]);
                 let gameState = state.gameState;
-                if (collision(obstacles[action.payload].position, state.player.position)) {
+                if (collision(obstacles[action.payload], state.player)) {
                     gameState = GameState.LOOSE;
                 }
 

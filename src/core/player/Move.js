@@ -1,4 +1,5 @@
 import { collision } from "../Collision";
+import { tileAtPosition } from "../Tile";
 
 export const Direction = {
     LEFT: 0,
@@ -8,14 +9,12 @@ export const Direction = {
 }
 
 const isCollisionOnMap = (map, position) => {
-    if (!map.fields[position[1]]) return true;
-    if (!map.fields[position[1]][position[0]]) return true;
-    const field = map.fields[position[1]][position[0]];
-    return (field.indexOf("blocked") !== -1)
+    const field = tileAtPosition(map, position);
+    return (!field || field.indexOf("blocked") !== -1)
 };
 
 const isComingFromBadDirection = (map, position, direction) => {
-    const field = map.fields[position[1]][position[0]];
+    const field = tileAtPosition(map, position);
     const vector = ["up", "down"].includes(direction) ? "vertical" : "horizontal";
     return (field.indexOf(direction) === -1 &&
         field.indexOf(vector) === -1);
@@ -24,7 +23,7 @@ const isComingFromBadDirection = (map, position, direction) => {
 const isCollisionWithObstacle = (obstacles, position) => {
     if (!obstacles) return false;
     return Object.keys(obstacles).some(key => {
-        return collision(obstacles[key].position, position);
+        return collision(obstacles[key], position);
     });
 }
 

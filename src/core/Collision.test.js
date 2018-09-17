@@ -9,6 +9,14 @@ describe("Collision", () => {
         expect(collision([1], [1,1])).toBe(false);
     });
 
+    it("it should unbox the first object if it has a position field", () => {
+        expect(collision({position: [1,1]}, [1,1])).toBe(true);
+    });
+
+    it("it should unbox the second object if it has a position field", () => {
+        expect(collision([1,1], {position: [1,1]})).toBe(true);
+    });
+
     it("it should return true if one of the two has a longer length but still there's a collision", () => {
         expect(collision([1, 1, 1], [1,1])).toBe(true);
     });
