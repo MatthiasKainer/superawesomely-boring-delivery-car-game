@@ -8,6 +8,11 @@ export const Direction = {
     DOWN: 3
 }
 
+export const directionAsString = (direction) => {
+    return Object.keys(Direction)
+            .find(key => Direction[key] === direction);
+}
+
 const isCollisionOnMap = (map, position) => {
     const field = tileAtPosition(map, position);
     return (!field || field.indexOf("blocked") !== -1)
