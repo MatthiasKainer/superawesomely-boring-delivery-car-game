@@ -4,8 +4,7 @@ import "./Player.css";
 import { directionAsString } from "./player/Move";
 
 export const Player = ({player, startPosition}) => {
-    const playerPosition = player ? player.position : null || startPosition;
-    const lastDirection = player ? player.lastDirection : "";
-    return <div className={`sprite player ${directionAsString(lastDirection)}`} 
-                style={getPosition(playerPosition)}></div>;
+    player = player || { position : startPosition, lastDirection : ""};
+    return <div className={`sprite player ${directionAsString(player.lastDirection)}`} 
+                style={getPosition(player.position)}></div>;
 }
