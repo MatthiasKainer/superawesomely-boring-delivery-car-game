@@ -12,12 +12,19 @@ export const handleCustomers = (customers, player, gameState) => {
         return customer;
     });
 
+    let updatedGameState = gameState
+    let reason = undefined
+    if (customers.some(customer => customer[2] < 1)) {
+        reason = "You missed a checkpoint"
+        updatedGameState = GameState.LOOSE
+    }
+    else if (customers.length < 1) {
+        updatedGameState = GameState.WIN
+    }
+
     return {
         customers,
-        gameState: customers.some(customer => customer[2] < 1)
-            ? GameState.LOOSE :
-            customers.length < 1
-                ? GameState.WIN
-                : gameState
+        gameState: updatedGameState,
+        reason
     }
 }

@@ -36,7 +36,7 @@ export class Engine extends Component {
             case GameState.WIN:
                 return <Won />;
             case GameState.LOOSE:
-                return <Loose />;
+                return <Loose reason={this.props.reason} />;
             default:
         }
         return "";

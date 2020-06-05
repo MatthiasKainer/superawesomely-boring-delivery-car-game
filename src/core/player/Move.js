@@ -56,19 +56,19 @@ export const moveTo = ({ map, direction, obstacles, player }) => {
             from = "down";
             break;
         default:
-            return { success: false };
+            return { success: false, reason: "You moved in a very weird direction I can't handle" };
     }
 
     if (isCollisionOnMap(map, position)) {
-        return { success: false };
+        return { success: false, reason: "You crashed!" };
     }
 
     if (isCollisionWithObstacle(obstacles, position)) {
-        return { success: false };
+        return { success: false, reason: "You crashed!" };
     }
 
     if (isComingFromBadDirection(map, position, from)) {
-        return { success: false };
+        return { success: false, reason: "You crashed!" };
     }
 
     return {

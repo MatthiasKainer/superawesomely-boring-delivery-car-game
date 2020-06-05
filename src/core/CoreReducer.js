@@ -13,11 +13,16 @@ const reducer = (state = {}, action) => {
                 direction: action.payload,
                 obstacles: state.obstacles
             });
-            if (!result.success) return { ...state, gameState: GameState.LOOSE };
+            if (!result.success) return { 
+                ...state, 
+                reason: result.reason,
+                gameState: GameState.LOOSE 
+            };
 
             const handledCustomers = handleCustomers(state.customers, result.position, state.gameState)
             return {
                 ...state,
+                reason: handledCustomers.reason,
                 gameState: handledCustomers.gameState,
                 player: { ...state.player, lastDirection: action.payload, position: result.position },
                 customers: handledCustomers.customers
@@ -28,12 +33,15 @@ const reducer = (state = {}, action) => {
             if (obstacles[action.payload]) {
                 obstacles[action.payload] = moveObstacleTo(obstacles[action.payload]);
                 let gameState = state.gameState;
+                let reason = undefined;
                 if (collision(obstacles[action.payload], state.player)) {
                     gameState = GameState.LOOSE;
+                    reason = "You crashed!"
                 }
 
                 return {
                     ...state,
+                    reason,
                     gameState,
                     obstacles
                 };
