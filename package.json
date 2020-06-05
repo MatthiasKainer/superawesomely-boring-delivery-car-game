@@ -16,13 +16,13 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "npm run build && mv build/ docs/",
+    "deploy": "rm -rf docs && npm run build && mv build/ docs",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://matthiaskainer.github.io/superawesomely-boring-delivery-game/",
+  "homepage": "https://matthiaskainer.github.io/superawesomely-boring-delivery-car-game/",
   "devDependencies": {
     "redux-mock-store": "^1.5.3"
   },
