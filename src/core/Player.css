@@ -2,7 +2,12 @@
     background-image: url('./assets/player.png');
     background-position: center 0;
     background-repeat: no-repeat;
+    background-size: contain;
     transform: rotate(0deg);
+}
+
+.porsche .player {
+    background-image: url('./assets/tdrc01_car04_a.png');
 }
 .player.RIGHT {
     transform: rotate(90deg);

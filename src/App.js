@@ -4,6 +4,24 @@ import Engine from "./core/Engine";
 import { movePlayer } from './core/CoreActions';
 import { Direction } from './core/player/Move';
 import Player from "./core/assets/player.png";
+import Porsche from "./core/assets/tdrc01_car04_a.png"
+
+
+const themeConfig = () => {
+    const theme = (window.location.hash ?? "").replace("#", "")
+    switch (theme.toLowerCase()) {
+        case "porsche": return {
+            cssClass: "porsche",
+            logo: Porsche,
+            header: <>Get to the dealerships in time</>
+        }
+        default: return {
+            cssClass: "",
+            logo: Player,
+            header: <>TOM<br/>Plan your Delivery!</>
+        }
+    }
+}
 
 class App extends Component {
 
@@ -97,12 +115,14 @@ class App extends Component {
         }
     }
     render() {
+        const theme = themeConfig()
+
         return (
-            <div className="App">
+            <div className={"App " + theme.cssClass}>
                 <header className="App-header">
-                    <img src={Player} className="App-logo" alt="logo" />
-                    <h1 className="App-title">TOM<br/>Plan your Delivery!</h1>
-                    <img src={Player} className="App-logo" alt="logo" />
+                    <img src={theme.logo} className="App-logo" alt="logo" />
+                    <h1 className="App-title">{theme.header}</h1>
+                    <img src={theme.logo} className="App-logo" alt="logo" />
                     <div className="help">Use your cursor keys or swipe over the game area</div>
                 </header>
                 <Engine />
