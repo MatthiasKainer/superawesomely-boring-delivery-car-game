@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/superawesomely-boring-delivery-game/static/css/main.a7c6263f.chunk.css",
+    "main.js": "/superawesomely-boring-delivery-game/static/js/main.2968393f.chunk.js",
+    "main.js.map": "/superawesomely-boring-delivery-game/static/js/main.2968393f.chunk.js.map",
+    "runtime-main.js": "/superawesomely-boring-delivery-game/static/js/runtime-main.3e304a28.js",
+    "runtime-main.js.map": "/superawesomely-boring-delivery-game/static/js/runtime-main.3e304a28.js.map",
+    "static/js/2.df58bfec.chunk.js": "/superawesomely-boring-delivery-game/static/js/2.df58bfec.chunk.js",
+    "static/js/2.df58bfec.chunk.js.map": "/superawesomely-boring-delivery-game/static/js/2.df58bfec.chunk.js.map",
+    "index.html": "/superawesomely-boring-delivery-game/index.html",
+    "precache-manifest.b0879dbac98074806896f562e270a52c.js": "/superawesomely-boring-delivery-game/precache-manifest.b0879dbac98074806896f562e270a52c.js",
+    "service-worker.js": "/superawesomely-boring-delivery-game/service-worker.js",
+    "static/css/main.a7c6263f.chunk.css.map": "/superawesomely-boring-delivery-game/static/css/main.a7c6263f.chunk.css.map",
+    "static/js/2.df58bfec.chunk.js.LICENSE.txt": "/superawesomely-boring-delivery-game/static/js/2.df58bfec.chunk.js.LICENSE.txt",
+    "static/media/Obstacles.css": "/superawesomely-boring-delivery-game/static/media/driving-car.3c180aa2.png",
+    "static/media/Tile.css": "/superawesomely-boring-delivery-game/static/media/spritesheet.1572e119.png",
+    "static/media/Player.css": "/superawesomely-boring-delivery-game/static/media/tdrc01_car04_a.923c0440.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3e304a28.js",
+    "static/js/2.df58bfec.chunk.js",
+    "static/css/main.a7c6263f.chunk.css",
+    "static/js/main.2968393f.chunk.js"
+  ]
+}
